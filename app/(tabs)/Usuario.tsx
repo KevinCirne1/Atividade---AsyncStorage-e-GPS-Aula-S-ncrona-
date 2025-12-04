@@ -56,13 +56,9 @@ export default function UsuariosScreen() {
         ListEmptyComponent={<ThemedText style={styles.emptyText}>Nenhum usuário cadastrado.</ThemedText>}
       />
 
-      {/* Botão Flutuante para Abrir Modal */}
-      <Pressable style={styles.fab} onPress={() => setModalVisible(true)}>
-        {/* Usando Ionicons diretamente para garantir que o ícone apareça */}
+      <Pressable style={styles.fab} onPress={() => setModalVisible(true)}
         <Ionicons name="add" size={30} color="#000" />
       </Pressable>
-
-      {/* --- O MODAL DE CRIAÇÃO --- */}
       <Modal
         animationType="slide"
         transparent={true}
@@ -94,12 +90,10 @@ export default function UsuariosScreen() {
               <Pressable style={[styles.btn, styles.btnCancel]} onPress={() => setModalVisible(false)}>
                 <ThemedText style={{color: '#FFF'}}>Cancelar</ThemedText>
               </Pressable>
-              
               <Pressable style={[styles.btn, styles.btnSave]} onPress={handleCreate}>
                 <ThemedText style={{color: '#000', fontWeight: 'bold'}}>Salvar</ThemedText>
               </Pressable>
             </View>
-
           </ThemedView>
         </View>
       </Modal>
@@ -150,4 +144,5 @@ const styles = StyleSheet.create({
   btn: { flex: 1, padding: 15, borderRadius: 8, alignItems: 'center' },
   btnCancel: { backgroundColor: '#444' },
   btnSave: { backgroundColor: NEON_GREEN },
+
 });
